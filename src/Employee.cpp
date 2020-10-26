@@ -22,6 +22,7 @@ static void userAuth();
 static void enterEmployeeDetails();
 static void deleteInfo();
 static void knowInfo(string emailId);
+static void modifyInfo();
 
 int main()
 {
@@ -61,7 +62,8 @@ static void userAuth()
             knowInfo(emailId);
         }
 
-        if(input1 == "4"){
+        if (input1 == "4")
+        {
             deleteInfo();
         }
     }
@@ -226,4 +228,8 @@ static void knowInfo(string email)
     {
         cout << employeeDetails[6];
     }
+}
+
+static void modifyInfo()
+{
 }
