@@ -68,7 +68,7 @@ static void userAuth()
         }
     }
     // any employees can login with the password given
-    else if (input == "compsci121")
+    else if (input == "cmpsci121")
     {
         cout << "You succesfully logged in as a employee ";
         cout << "\nWhat do you want to do: " << endl;
