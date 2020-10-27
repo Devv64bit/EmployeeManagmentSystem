@@ -23,9 +23,9 @@ static string vehicleTagNumber;
 static string modElement;
 static string newData;
 static string empData;
-static string elementToMod;
+static string modifythisElement;
 static vector <string> empDetails;
-static int dataNum = 0;
+static int inputData = 0;
 static void displayInfo();
 static void getInfo(string str);
 static void userAuthentication();
@@ -257,45 +257,45 @@ static void displayInfo() {
     cin >> empData;
 
     if (empData == "First_Name") {
-        // dataNum will set the index to the given input
+        // inputData will set the index to the given input
         // eg: First name is at 0 index in the txt file.
-        dataNum = 0;
+        inputData = 0;
     }
     else if (empData == "Last_Name") {
-        dataNum = 1;
+        inputData = 1;
     }
     else if (empData == "Email_ID") {
-        dataNum = 2;
+        inputData = 2;
     }
     else if (empData == "Phone_Number") {
-        dataNum = 3;
+        inputData = 3;
     }
     else if (empData == "Apartment_Number") {
-        dataNum = 4;
+        inputData = 4;
     }
     else if (empData == "Street_Address") {
-        dataNum = 5;
+        inputData = 5;
     }
     else if (empData == "City") {
-        dataNum = 6;
+        inputData = 6;
     }
     else if (empData == "State") {
-        dataNum = 7;
+        inputData = 7;
     }
     else if (empData == "Zipcode") {
-        dataNum = 8;
+        inputData = 8;
     }
     else if (empData == "Vehicle_Type") {
-        dataNum = 9;
+        inputData = 9;
     }
     else if (empData == "Vehicle_Model") {
-        dataNum = 10;
+        inputData = 10;
     }
     else if (empData == "Vehicle_Color") {
-        dataNum = 11;
+        inputData = 11;
     }
     else if (empData == "Vehicle_Tag_Number") {
-        dataNum = 12;
+        inputData = 12;
     }
     else {
         cout << "Not a valid detail\n";
@@ -317,7 +317,8 @@ static void displayInfo() {
         }
         newFile.close();
     }
-    cout << "The " + empData + " is currently " + elementToMod;
+    cout << "The " + empData + " is currently " + modifythisElement
+;
     cout << "\nEnter a new " + empData + ": ";
     cin >> modElement;
     cout << "\nDone processing your request.";
@@ -367,7 +368,7 @@ static void modifyInfo(string str) {
 
     // fancy variable to say what the current item is in the txt file
     // eg: Current zip code is 19020. 
-    elementToMod = empDetails[dataNum];
+    modifythisElement = empDetails[inputData];
 }
 
 static void replaceInfo(string str) {
@@ -376,7 +377,8 @@ static void replaceInfo(string str) {
 
     while(searcher >> index) {
         // if statement to check that new index doesn't equal the old index.
-        if(index!=elementToMod) {
+        if(index!= modifythisElement
+    ) {
             // push back the vector when the replacement is done.
             empDetails.push_back(index);
             // newData variable to compute the index and replace it.
