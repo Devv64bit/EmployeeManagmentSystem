@@ -4,6 +4,7 @@
 #include <ostream>
 #include <sstream>
 #include <vector>
+#include<bits/stdc++.h>
 using namespace std;
 
 static string firstName;
@@ -191,6 +192,7 @@ static void deleteInfo() {
     makeCopy.close();
     remove("employeesInformation.txt");
     rename("example.txt", "employeesInformation.txt");
+    cout << "\nThe entry was succesfully removed"<< endl;
 }
 
 static void knowInfo(string email) {
@@ -326,7 +328,7 @@ static void displayInfo() {
         while(getline(newFile, indexFinder)) {
             // use find function to find exactly where the input from user is located.
 
-            if(indexFinder.find(input) ==0) {
+            if(indexFinder.find(input) == 0) {
                 // call this method to perform the replacement of the input
                 replaceInfo(indexFinder);
             }
